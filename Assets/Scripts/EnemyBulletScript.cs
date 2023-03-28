@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyBulletScript : MonoBehaviour
 {
-
+    public PlayerHealtScript playerHealth;
+    public int damage = 2;
     public float speed = 5f;
 
     // Start is called before the first frame update
@@ -19,11 +20,12 @@ public class EnemyBulletScript : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Destroy(other.gameObject);
+            playerHealth.TakeDamage(damage);
+            print("osuin");
         }
     }
 }
