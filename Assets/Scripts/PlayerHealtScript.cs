@@ -6,6 +6,7 @@ public class PlayerHealtScript : MonoBehaviour
 {
     public int maxHealth = 10;
     public int currentHealth;
+
     public HealtBar healthBar;
 
     // Start is called before the first frame update
