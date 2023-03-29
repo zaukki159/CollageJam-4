@@ -25,7 +25,14 @@ public class EnemyBulletScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerHealth.TakeDamage(damage);
+            Destroy(gameObject);
             print("osuin");
+        }
+        else if (other.gameObject.CompareTag("MisTarget"))
+        {
+            
+            Destroy(gameObject);
+            
         }
     }
 }
